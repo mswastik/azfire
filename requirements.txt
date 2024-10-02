@@ -1,2 +1,5 @@
 fastapi[standard]
 polars
+xgboost
+scikit-learn
+statsforecast
