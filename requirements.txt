@@ -3,3 +3,4 @@ polars
 xgboost
 scikit-learn
 statsforecast
+plotly
