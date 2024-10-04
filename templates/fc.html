@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Forecasting Example{% endblock %}
+{% block content %}
+<div class="block gap-3 px-3 py-3">
+    <div class="container pb-8 pt-4">You can train any of three statistical forecasting model on <a class="underline text-blue-600 hover:bg-blue-100" href="https://www.kaggle.com/datasets/rakannimer/air-passengers">Air Passengers data</a>. 
+      Once trained model will predict future air passengers demand. You can play around with different parameters passed to models, the models are retrained on new parameters everytime you change and submit
+      the below form. The updated model then predicts the demand and display the graph below.</div>
+    <form class="flex flex-row mx-auto gap-3" hx-post="/fc" hx-target="#result">
+    <div>
+    <label class="mb-2 text-sm px-2">Season Length</label>
+    <input name="season" type="number" min=1 max=31 value=12 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>
+    <div>
+      <label class="mb-2 text-sm px-2">max_p</label>
+      <input name="max_p" type="number" min=0 max=3 value=3 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>  
+    <div>
+      <label class="mb-2 text-sm px-2">max_q</label>
+      <input name="max_q" type="number" min=0 max=3 value=3 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>     
+    <div class="border border-gray-300 rounded-lg px-3">
+      <label class="mb-2 text-sm px-2">Models</label>
+      <div class="flex">
+        <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
+            <input name="ar" type="checkbox" checked="true"
+              class="peer cursor-pointer transition-all appearance-none rounded focus:ring-transparent" id="ar" />
+            <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="ar">AutoARIMA</label>
+      </div>
+      <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
+        <input name="hw" type="checkbox"
+          class="peer cursor-pointer transition-all appearance-none rounded focus:ring-transparent" id="hw" />
+        <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="hw">HoltWinters</label>
+      </div>
+      <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
+        <input name="dto" type="checkbox"
+          class="peer cursor-pointer transition-all appearance-none rounded focus:ring-transparent" id="dto" />
+        <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="dto">DynamicOptimizedTheta</label>
+      </div>
+          </div></div>
+    <div>
+      <label class="mb-2 px-2 text-sm">Freq</label>
+      <select name="freq" class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required />
+      <option value="ME">ME</option>
+      <option value="D">D</option>
+      <option value="h">h</option>
+      <option value="YE">YE</option>
+    </select></div>
+    <div>
+      <label class="mb-2 text-sm px-2">Forecast Horizon</label>
+      <input name="fh" type="number" min=1 max=36 value=24 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>
+    <div>  
+    <label class="block pb-5 text-sm px-2"> </label>
+      <button type="submit" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Submit</button>
+    </div>
+    </form>
+    </div>
+    <div class="grid place-items-center p-5" id="result">
+    <div role="status" id="spin" class="hidden w-8 h-8 inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite]">
+      <span class="text-transparent">...</span>
+    </div>
+    </div>
+{% endblock %}
