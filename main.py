@@ -80,3 +80,7 @@ async def index(request: Request):
 @app.get("/contact")
 async def index(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request})
+
+@app.get("/review")
+async def index(request: Request):
+    return templates.TemplateResponse("review.html", {"request": request})

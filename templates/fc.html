@@ -5,49 +5,48 @@
     <div class="container pb-8 pt-4">You can train any of three statistical forecasting model on <a class="underline text-blue-600 hover:bg-blue-100" href="https://www.kaggle.com/datasets/rakannimer/air-passengers">Air Passengers data</a>. 
       Once trained model will predict future air passengers demand. You can play around with different parameters passed to models, the models are retrained on new parameters everytime you change and submit
       the below form. The updated model then predicts the demand and display the graph below.</div>
-    <form class="flex flex-row mx-auto gap-3" hx-post="/fc" hx-target="#result">
+    <form class="flex flex-row mx-auto gap-2" hx-post="/fc" hx-target="#result">
     <div>
-    <label class="mb-2 text-sm px-2">Season Length</label>
-    <input name="season" type="number" min=1 max=31 value=12 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>
+    <label class="mb-2 text-sm">Season Length</label>
+    <input name="season" type="number" min=1 max=31 value=12 class="max-w-16 px-2 border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full" required /></div>
     <div>
-      <label class="mb-2 text-sm px-2">max_p</label>
-      <input name="max_p" type="number" min=0 max=3 value=3 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>  
+      <label class="mb-2 text-sm">max_p</label>
+      <input name="max_p" type="number" min=0 max=3 value=3 class="max-w-16 px-2 border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full" required /></div>  
     <div>
-      <label class="mb-2 text-sm px-2">max_q</label>
-      <input name="max_q" type="number" min=0 max=3 value=3 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>     
-    <div class="border border-gray-300 rounded-lg px-3">
+      <label class="mb-2 text-sm">max_q</label>
+      <input name="max_q" type="number" min=0 max=3 value=3 class="max-w-16 px-2 border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full" required /></div>     
+    <div class="border border-gray-300 rounded-sm px-3">
       <label class="mb-2 text-sm px-2">Models</label>
       <div class="flex">
         <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
             <input name="ar" type="checkbox" checked="true"
-              class="peer cursor-pointer transition-all appearance-none rounded focus:ring-transparent" id="ar" />
+              class="peer cursor-pointer transition-all rounded outline-none" id="ar" />
             <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="ar">AutoARIMA</label>
       </div>
       <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
         <input name="hw" type="checkbox"
-          class="peer cursor-pointer transition-all appearance-none rounded focus:ring-transparent" id="hw" />
+          class="peer cursor-pointer transition-all rounded outline-none" id="hw" />
         <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="hw">HoltWinters</label>
       </div>
       <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
         <input name="dto" type="checkbox"
-          class="peer cursor-pointer transition-all appearance-none rounded focus:ring-transparent" id="dto" />
+          class="peer cursor-pointer transition-all rounded border-none outline-none" id="dto" />
         <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="dto">DynamicOptimizedTheta</label>
       </div>
           </div></div>
     <div>
-      <label class="mb-2 px-2 text-sm">Freq</label>
-      <select name="freq" class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required />
+      <label class="mb-2 text-sm">Freq</label>
+      <select name="freq" class="max-w-14 px-2 text-sm rounded-sm ring ring-blue-500 focus:ring-2 outline-none w-full" required >
       <option value="ME">ME</option>
       <option value="D">D</option>
       <option value="h">h</option>
       <option value="YE">YE</option>
     </select></div>
     <div>
-      <label class="mb-2 text-sm px-2">Forecast Horizon</label>
-      <input name="fh" type="number" min=1 max=36 value=24 class="border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full" required /></div>
+      <label class="mb-2 text-sm">Forecast Horizon</label>
+      <input name="fh" type="number" min=1 max=36 value=24 class="max-w-16 text-sm rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full px-2" required /></div>
     <div>  
-    <label class="block pb-5 text-sm px-2"> </label>
-      <button type="submit" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Submit</button>
+      <button type="submit" href="" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text-sm w-full px-3 py-2 text-center">Submit</button>
     </div>
     </form>
     </div>
