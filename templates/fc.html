@@ -7,51 +7,51 @@
       the below form. The updated model then predicts the demand and display the graph below.</div>
     <form class="flex flex-row mx-auto gap-2" hx-post="/fc" hx-target="#result">
     <div>
-    <label class="mb-2 text-sm">Season Length</label>
-    <input name="season" type="number" min=1 max=31 value=12 class="max-w-16 px-2 border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full" required /></div>
+    <label class="mb-2 text">Season Length</label>
+    <input name="season" type="number" min=1 max=31 value=12 class="p-1 max-w-16 px-2 text rounded-sm ring ring-gray-300 focus:ring-blue-500 focus:outline-none w-full" required /></div>
     <div>
-      <label class="mb-2 text-sm">max_p</label>
-      <input name="max_p" type="number" min=0 max=3 value=3 class="max-w-16 px-2 border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full" required /></div>  
+      <label class="mb-2 text">max_p</label>
+      <input name="max_p" type="number" min=0 max=3 value=3 class="p-1 max-w-16 px-2 text rounded-sm ring ring-gray-300 focus:ring-blue-500 focus:outline-none w-full" required /></div>  
     <div>
-      <label class="mb-2 text-sm">max_q</label>
-      <input name="max_q" type="number" min=0 max=3 value=3 class="max-w-16 px-2 border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full" required /></div>     
+      <label class="mb-2 text">max_q</label>
+      <input name="max_q" type="number" min=0 max=3 value=3 class="p-1 max-w-16 px-2 text rounded-sm ring ring-gray-300 focus:ring-blue-500 focus:outline-none w-full" required /></div>
+      <div>
+        <label class="mb-2 text">Forecast Horizon</label>
+        <input name="fh" type="number" min=1 max=36 value=24 class="p-1 max-w-16 text rounded-sm ring ring-gray-300 focus:ring-blue-500 focus:outline-none w-full px-2" required /></div>     
     <div class="border border-gray-300 rounded-sm px-3">
-      <label class="mb-2 text-sm px-2">Models</label>
+      <label class="mb-2 text px-2">Models</label>
       <div class="flex">
         <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
             <input name="ar" type="checkbox" checked="true"
               class="peer cursor-pointer transition-all rounded outline-none" id="ar" />
-            <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="ar">AutoARIMA</label>
+            <label class="cursor-pointer ml-1 text-slate-600 text peer-checked:text-blue-600" for="ar">AutoARIMA</label>
       </div>
       <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
         <input name="hw" type="checkbox"
           class="peer cursor-pointer transition-all rounded outline-none" id="hw" />
-        <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="hw">HoltWinters</label>
+        <label class="cursor-pointer ml-1 text-slate-600 text peer-checked:text-blue-600" for="hw">HoltWinters</label>
       </div>
       <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
         <input name="dto" type="checkbox"
           class="peer cursor-pointer transition-all rounded border-none outline-none" id="dto" />
-        <label class="cursor-pointer ml-1 text-slate-600 text-sm peer-checked:text-blue-600" for="dto">DynamicOptimizedTheta</label>
+        <label class="cursor-pointer ml-1 text-slate-600 text peer-checked:text-blue-600" for="dto">DynamicOptimizedTheta</label>
       </div>
           </div></div>
-    <div>
-      <label class="mb-2 text-sm">Freq</label>
-      <select name="freq" class="max-w-14 px-2 text-sm rounded-sm ring ring-blue-500 focus:ring-2 outline-none w-full" required >
+    <div class="flex flex-col">
+      <label class="pb-2 text">Freq</label>
+      <select name="freq" class="max-w-16 p-1 text-sm rounded-sm ring ring-gray-300 focus:ring-blue-500 outline-none w-full" required >
       <option value="ME">ME</option>
       <option value="D">D</option>
       <option value="h">h</option>
       <option value="YE">YE</option>
     </select></div>
-    <div>
-      <label class="mb-2 text-sm">Forecast Horizon</label>
-      <input name="fh" type="number" min=1 max=36 value=24 class="max-w-16 text-sm rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full px-2" required /></div>
     <div>  
-      <button type="submit" href="" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text-sm w-full px-3 py-2 text-center">Submit</button>
+      <button type="submit" href="" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text w-full px-3 py-2 text-center">Submit</button>
     </div>
     </form>
     </div>
     <div class="grid place-items-center p-5" id="result">
-    <div role="status" id="spin" class="hidden w-8 h-8 inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite]">
+    <div role="status" id="spin" class="h-8 inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite] hidden md:hidden">
       <span class="text-transparent">...</span>
     </div>
     </div>

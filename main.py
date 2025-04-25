@@ -46,7 +46,7 @@ async def index(request: Request):
     p=predf(item)
     return HTMLResponse('''<div class="text-md text-center p-5 bg-gray-300 rounded-md" id="result">The predicted no. of rentals are &nbsp; 
                         <b class="text-2xl text-blue-700">{}</b></div>
-                        <div role="status" id="spin" class="hidden w-8 h-8inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                        <div role="status" id="spin" class="hidden md:hidden w-8 h-8inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite]">
       <span class="text-transparent">...</span>'''.format(int(p[0])))
 
 @app.post("/fc")

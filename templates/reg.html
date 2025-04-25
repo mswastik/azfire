@@ -7,50 +7,50 @@
       You can play around with these external factors and check the prediction based on the changed value.</div>
     <form class="flex flex-row mx-auto gap-3" hx-post="/reg" hx-target="#result">
     <div>
-    <label class="mb-2 text-sm">Day</label>
-    <input name="day" type="number" min=1 max=31 value="20" class="text rounded-sm ring ring-blue-500 focus:ring-2 focus:outline-none w-full" required /></div>
+    <label class="text">Day</label>
+    <input name="day" type="number" min=1 max=31 value="20" class="p-1 text rounded-sm ring ring-gray-300 focus:ring-blue-500 focus:outline-none w-full" required /></div>
     <div>
-      <label class="mb-2 text-sm">Month</label>
-      <input name="month" type="number" min=1 max=12 value="5" class="text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>  
+      <label class="text">Month</label>
+      <input name="month" type="number" min=1 max=12 value="5" class="p-1 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>  
     <div>
-      <label class="mb-2 text-sm">Year</label>
-      <select name="year" class="border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required >
+      <label class="text">Year</label>
+      <select name="year" class="p-1 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required >
       <option value="2011">2011</option>
       <option value="2012">2012</option>
     </select></div>
     <div>
-      <label class="mb-2 text-sm">Season</label>
-      <input name="season" type="number" min=1 max=4 value="1" class="border-gray-300 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">Season</label>
+      <input name="season" type="number" min=1 max=4 value="1" class="p-1 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
     <div>
-      <label class="mb-2 text-sm">Holiday</label>
-      <input name="holiday" type="number" min=0 max=1 value="0" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">Holiday</label>
+      <input name="holiday" type="number" min=0 max=1 value="0" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
     <div>
-      <label class="mb-2 text-sm">Weekday</label>
-      <input name="weekday" type="number" min=0 max=6 value="1" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">Weekday</label>
+      <input name="weekday" type="number" min=0 max=6 value="1" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
       <div>
-      <label class="mb-2 text-sm">Workingday</label>
-      <input name="workingday" type="number" min=0 max=1 value="1" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">Workingday</label>
+      <input name="workingday" type="number" min=0 max=1 value="1" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
       <div>
-      <label class="mb-2 text-sm">Weathersit</label>
-      <input name="weathersit" type="number" min=0 max=1 value="1" step="1" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">Weathersit</label>
+      <input name="weathersit" type="number" min=0 max=1 value="1" step="1" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
       <div>
-      <label class="mb-2 text-sm">Temp</label>
-      <input name="temp" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>          
+      <label class="text">Temp</label>
+      <input name="temp" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>          
       <div>
-      <label class="mb-2 text-sm">ATemp</label>
-      <input name="atemp" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">ATemp</label>
+      <input name="atemp" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
       <div>
-      <label class="mb-2 text-sm">Humidity</label>
-      <input name="hum" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">Humidity</label>
+      <input name="hum" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
       <div>
-      <label class="mb-2 text-sm">Windspeed</label>
-      <input name="windspeed" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="border-gray-300 text-gray-900 text rounded-sm ring ring-blue-500 focus:ring-2 w-full focus:outline-none" required /></div>
+      <label class="text">Windspeed</label>
+      <input name="windspeed" type="number" min=0 max=1 value="0.166" precision="6" step="0.001" class="p-1 text-gray-900 text rounded-sm ring ring-gray-300 focus:ring-blue-500 w-full focus:outline-none" required /></div>
       <div>
-      <button type="submit" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text-sm w-full px-3 mt-3 py-2 text-center focus:outline-none">Submit</button></div>
+      <button type="submit" href="" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text w-full px-3 mt-4 py-2 text-center focus:outline-none">Submit</button></div>
     </form>
     </div>
     <div class="grid place-items-center p-5" id="result">
-    <div role="status" id="spin" class="hidden w-8 h-8 inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite]">
+    <div role="status" id="spin" class="w-8 h-8 inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite] hidden md:hidden">
       <span class="text-transparent">...</span>
     </div>
     </div>

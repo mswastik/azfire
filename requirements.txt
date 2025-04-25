@@ -1,6 +1,6 @@
 fastapi[standard]
 polars
-xgboost
+xgboost==2.1.4
 scikit-learn
 statsforecast
 plotly
