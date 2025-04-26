@@ -2,10 +2,10 @@
 {% block title %}Forecasting Example{% endblock %}
 {% block content %}
 <div class="block gap-3 px-3 py-3">
-    <div class="container pb-8 pt-4">You can train any of three statistical forecasting model on <a class="underline text-blue-600 hover:bg-blue-100" href="https://www.kaggle.com/datasets/rakannimer/air-passengers">Air Passengers data</a>. 
+    <div class="container pb-8 pt-4">You can train any of three statistical forecasting model on <a  target="_blank" class="underline text-blue-600 hover:bg-blue-100" href="https://www.kaggle.com/datasets/rakannimer/air-passengers">Air Passengers data</a>. 
       Once trained model will predict future air passengers demand. You can play around with different parameters passed to models, the models are retrained on new parameters everytime you change and submit
       the below form. The updated model then predicts the demand and display the graph below.</div>
-    <form class="flex flex-row mx-auto gap-2" hx-post="/fc" hx-target="#result">
+    <form class="flex flex-wrap mx-auto gap-2" hx-post="/fc" hx-target="#result">
     <div>
     <label class="mb-2 text">Season Length</label>
     <input name="season" type="number" min=1 max=31 value=12 class="p-1 max-w-16 px-2 text rounded-sm ring ring-gray-300 focus:ring-blue-500 focus:outline-none w-full" required /></div>
@@ -18,7 +18,15 @@
       <div>
         <label class="mb-2 text">Forecast Horizon</label>
         <input name="fh" type="number" min=1 max=36 value=24 class="p-1 max-w-16 text rounded-sm ring ring-gray-300 focus:ring-blue-500 focus:outline-none w-full px-2" required /></div>     
-    <div class="border border-gray-300 rounded-sm px-3">
+        <div class="min-w-24">
+          <label class="mb-2 text">Freq</label>
+          <select name="freq" class="max-w-18 p-1 px-2 text-sm rounded-sm ring ring-gray-300 focus:ring-blue-500 outline-none" required >
+          <option value="ME">ME</option>
+          <option value="D">D</option>
+          <option value="h">h</option>
+          <option value="YE">YE</option>
+        </select></div>
+        <div class="border border-gray-300 rounded-sm px-3">
       <label class="mb-2 text px-2">Models</label>
       <div class="flex">
         <div role="button" class="px-2 py-1 rounded-md cursor-pointer hover:bg-blue-100">
@@ -37,14 +45,7 @@
         <label class="cursor-pointer ml-1 text-slate-600 text peer-checked:text-blue-600" for="dto">DynamicOptimizedTheta</label>
       </div>
           </div></div>
-    <div class="flex flex-col">
-      <label class="pb-2 text">Freq</label>
-      <select name="freq" class="max-w-16 p-1 text-sm rounded-sm ring ring-gray-300 focus:ring-blue-500 outline-none w-full" required >
-      <option value="ME">ME</option>
-      <option value="D">D</option>
-      <option value="h">h</option>
-      <option value="YE">YE</option>
-    </select></div>
+
     <div>  
       <button type="submit" href="" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'invisible');" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text w-full px-3 py-2 text-center">Submit</button>
     </div>
