@@ -46,12 +46,12 @@
       <option value="YE">YE</option>
     </select></div>
     <div>  
-      <button type="submit" href="" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'hidden');" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text w-full px-3 py-2 text-center">Submit</button>
+      <button type="submit" href="" hx-on:click="htmx.removeClass(htmx.find('#spin'), 'invisible');" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text w-full px-3 py-2 text-center">Submit</button>
     </div>
     </form>
     </div>
     <div class="grid place-items-center p-5" id="result">
-    <div role="status" id="spin" class="h-8 inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite] hidden md:hidden">
+    <div role="status" id="spin" class="w-8 h-8 inline-block rounded-full border-4 border-solid border-e-transparent animate-spin fill-blue-600 border-blue-600 motion-reduce:animate-[spin_1.5s_linear_infinite] invisible">
       <span class="text-transparent">...</span>
     </div>
     </div>
